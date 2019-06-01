@@ -17,12 +17,27 @@ public class SkillServlet extends javax.servlet.http.HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        listSkills(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String input = req.getParameter("input");
 
+        switch (input) {
+            case "add":
+                addSkill(req, resp);
+                break;
+            case "edit":
+                editSkill(req, resp);
+                break;
+            case "update":
+                updateSkill(req, resp);
+                break;
+            case "delete":
+                deleteSkill(req, resp);
+                break;
+        }
     }
 
     private void listSkills(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
