@@ -16,6 +16,7 @@ import javax.persistence.*;
 public class Account extends BaseEntity {
     @Column(name = "name")
     private String accountName;
+    @Column(name = "acc_status")
     @Enumerated(EnumType.STRING)
     private AccountStatus accountStatus;
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
