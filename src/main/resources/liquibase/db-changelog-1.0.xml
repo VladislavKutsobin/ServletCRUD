@@ -1,0 +1,78 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="VladislavK (generated)" id="1">
+        <createTable tableName="accounts">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="acc_status" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="VladislavK (generated)" id="2">
+        <createTable tableName="developers">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="firstName" type="VARCHAR(64)"/>
+            <column name="lastName" type="VARCHAR(64)"/>
+            <column name="specialty" type="VARCHAR(64)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="VladislavK (generated)" id="3">
+        <createTable tableName="developers_accounts">
+            <column name="developer_id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="account_id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="VladislavK (generated)" id="4">
+        <createTable tableName="developers_skills">
+            <column name="developer_id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="skill_id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="VladislavK (generated)" id="5">
+        <createTable tableName="skills">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="VladislavK (generated)" id="6">
+        <createIndex indexName="account_id" tableName="developers_accounts">
+            <column name="account_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="VladislavK (generated)" id="7">
+        <createIndex indexName="skill_id" tableName="developers_skills">
+            <column name="skill_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="VladislavK (generated)" id="8">
+        <addForeignKeyConstraint baseColumnNames="developer_id" baseTableName="developers_accounts" constraintName="developers_accounts_ibfk_1" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="developers" />
+    </changeSet>
+    <changeSet author="VladislavK (generated)" id="9">
+        <addForeignKeyConstraint baseColumnNames="account_id" baseTableName="developers_accounts" constraintName="developers_accounts_ibfk_2" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="accounts" />
+    </changeSet>
+    <changeSet author="VladislavK (generated)" id="10">
+        <addForeignKeyConstraint baseColumnNames="developer_id" baseTableName="developers_skills" constraintName="developers_skills_ibfk_1" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="developers"/>
+    </changeSet>
+    <changeSet author="VladislavK (generated)" id="11">
+        <addForeignKeyConstraint baseColumnNames="skill_id" baseTableName="developers_skills" constraintName="developers_skills_ibfk_2" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="skills" />
+    </changeSet>
+</databaseChangeLog>
