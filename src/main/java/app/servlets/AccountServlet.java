@@ -21,12 +21,27 @@ public class AccountServlet extends javax.servlet.http.HttpServlet {
     private Account accountToSave = new Account();
        @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+        listAccounts(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        String input = req.getParameter("input");
+
+        switch (input) {
+            case "add":
+                addAccount(req, resp);
+                break;
+            case "edit":
+                editAccount(req, resp);
+                break;
+            case "update":
+                updateAccount(req, resp);
+                break;
+            case "delete":
+                deleteAccount(req, resp);
+                break;
+        }
     }
 
     private void listAccounts(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

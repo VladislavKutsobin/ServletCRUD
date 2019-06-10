@@ -1,0 +1,32 @@
+<!DOCTYPE web-app>
+
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>SkillServlet</servlet-name>
+        <servlet-class>app.servlets.SkillServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeveloperServlet</servlet-name>
+        <servlet-class>app.servlets.UserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AccountServlet</servlet-name>
+        <servlet-class>servlets.AccountServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SkillServlet</servlet-name>
+        <url-pattern>/skill</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DeveloperServlet</servlet-name>
+        <url-pattern>/developer</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AccountServlet</servlet-name>
+        <url-pattern>/account</url-pattern>
+    </servlet-mapping>
+</web-app>
