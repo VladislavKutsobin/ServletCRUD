@@ -1,6 +1,6 @@
-<%@ page import="model.Developer" %>
-<%@ page import="repository.DeveloperRepository" %>
-<%@ page import="repository.implementations.DeveloperRepositoryImplementation" %>
+<%@ page import="app.model.Developer" %>
+<%@ page import="app.repository.DeveloperRepository" %>
+<%@ page import="app.repository.implementations.DeveloperRepositoryImplementation" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>

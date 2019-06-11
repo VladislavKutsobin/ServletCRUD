@@ -26,7 +26,7 @@ public class AccountServlet extends javax.servlet.http.HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String input = req.getParameter("input");
+        String input = req.getParameter("button");
 
         switch (input) {
             case "add":
@@ -47,7 +47,7 @@ public class AccountServlet extends javax.servlet.http.HttpServlet {
     private void listAccounts(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Account> accountList = accountRepository.findAll();
         request.setAttribute("accountsList", accountList);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("app/view/account.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/account.jsp");
         requestDispatcher.forward(request, response);
     }
 
@@ -66,7 +66,7 @@ public class AccountServlet extends javax.servlet.http.HttpServlet {
     }
 
     private void editAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("app/view/editAccountForm.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/editAccount.jsp");
         requestDispatcher.forward(request, response);
     }
 

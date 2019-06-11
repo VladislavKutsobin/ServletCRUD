@@ -1,19 +1,19 @@
-<%@ page import="model.Account" %>
+<%@ page import="app.model.Account" %>
 <%@ page import="java.util.List" %>
 
-<%@ page import="model.Developer" %>
-<%@ page import="repository.DeveloperRepository" %>
-<%@ page import="repository.implementations.DeveloperRepositoryImplementation" %>
+<%@ page import="app.model.Developer" %>
+<%@ page import="app.repository.DeveloperRepository" %>
+<%@ page import="app.repository.implementations.DeveloperRepositoryImplementation" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title>Accounts</title>
+    <title>Account</title>
 </head>
 <body>
 
 <div class="w3-panel w3-red">
-    <h1 class="w3-text-green" style="text-shadow:4px 4px 0 #444" align="center" ><b>Team</b></h1>
+    <h1 class="w3-text-green" style="text-shadow:4px 4px 0 #444" align="center" ><b>Account</b></h1>
 </div>
 
 <div align="center">
@@ -53,7 +53,7 @@
             for (Account a : accounts){ %>
         <tr>
             <td> <%=a.getId()%></td>
-            <td><%=a.getName()%></td>
+            <td><%=a.getAccountName()%></td>
             <td>
                 <form action="account" method="post">
                     <input  type="hidden" name="accountIdToDelete" value="<%=a.getId()%>"/>

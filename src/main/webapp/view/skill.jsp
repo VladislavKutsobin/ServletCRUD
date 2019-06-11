@@ -1,4 +1,4 @@
-<%@ page import="model.Skill" %>
+<%@ page import="app.model.Skill " %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: maya

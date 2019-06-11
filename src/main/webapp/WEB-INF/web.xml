@@ -8,11 +8,11 @@
     </servlet>
     <servlet>
         <servlet-name>DeveloperServlet</servlet-name>
-        <servlet-class>app.servlets.UserServlet</servlet-class>
+        <servlet-class>app.servlets.DeveloperServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AccountServlet</servlet-name>
-        <servlet-class>servlets.AccountServlet</servlet-class>
+        <servlet-class>app.servlets.AccountServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

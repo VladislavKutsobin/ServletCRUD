@@ -1,6 +1,6 @@
-%@ page import="model.Account" %>
-<%@ page import="repository.AccountRepository" %>
-<%@ page import="repository.implementations.AccountRepositoryImplementation" %>
+<%@ page import="app.model.Account" %>
+<%@ page import="app.repository.AccountRepository" %>
+<%@ page import="app.repository.implementations.AccountRepositoryImplementation" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -25,13 +25,13 @@
             <tr>
                 <th>name of account: </th>
                 <td>
-                    <input type="text" name="accountNameToUpdate" size="30" value = "<%= accountForEdit.getName()%>"/>
+                    <input type="text" name="accountNameToUpdate" size="30" value = "<%= accountForEdit.getAccountName()%>"/>
                 </td>
             </tr>
             <tr>
                 <th>status of account: </th>
                 <td>
-                    <input type="text" name="accountStatusToUpdate" size="30" value = "<%= accountForEdit.getName()%>"/>
+                    <input type="text" name="accountStatusToUpdate" size="30" value = "<%= accountForEdit.getAccountStatus()%>"/>
                 </td>
             </tr>
             <tr>

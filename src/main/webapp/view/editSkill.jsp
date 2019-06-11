@@ -1,6 +1,6 @@
-<%@ page import="model.Skill" %>
-<%@ page import="repository.SkillRepository" %>
-<%@ page import="repository.implementations.SkillRepositoryImplementation" %>
+<%@ page import="app.model.Skill" %>
+<%@ page import="app.repository.SkillRepository" %>
+<%@ page import="app.repository.implementations.SkillRepositoryImplementation" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>

@@ -22,7 +22,7 @@ public class SkillServlet extends javax.servlet.http.HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String input = req.getParameter("input");
+        String input = req.getParameter("button");
 
         switch (input) {
             case "add":
@@ -43,7 +43,7 @@ public class SkillServlet extends javax.servlet.http.HttpServlet {
     private void listSkills(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Skill> skillList = skillRepository.findAll();
         request.setAttribute("SkillsList", skillList);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("app/view/skill.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/skill.jsp");
         requestDispatcher.forward(request, response);
     }
 
@@ -55,7 +55,7 @@ public class SkillServlet extends javax.servlet.http.HttpServlet {
     }
 
     private void editSkill(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("app/view/editSkillForm.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/editSkill.jsp");
         requestDispatcher.forward(request, response);
     }
 

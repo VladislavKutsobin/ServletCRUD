@@ -28,7 +28,7 @@ public class DeveloperServlet extends javax.servlet.http.HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String input = req.getParameter("input");
+        String input = req.getParameter("button");
 
         switch (input) {
             case "add":
@@ -49,7 +49,7 @@ public class DeveloperServlet extends javax.servlet.http.HttpServlet {
     private void listDevelopers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Developer> developerList = developerRepository.findAll();
         request.setAttribute("developersList", developerList);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("app/view/developer.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/developer.jsp");
         requestDispatcher.forward(request, response);
     }
 
@@ -60,7 +60,7 @@ public class DeveloperServlet extends javax.servlet.http.HttpServlet {
         String specialty = request.getParameter("specialty");
         Set<Skill> skillSet = new HashSet<>();
 
-        String[] idSkillList = request.getParameterValues("skillNames");
+        String[] idSkillList = request.getParameterValues("names");
         Set<String> setWithId = new HashSet<>(Arrays.asList(idSkillList));
         Set<Integer> intSetId = new HashSet<>();
         for(String id : setWithId) {
@@ -95,7 +95,7 @@ public class DeveloperServlet extends javax.servlet.http.HttpServlet {
     }
 
     private void editDeveloper(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("app/view/editDeveloperForm.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/editDeveloper.jsp");
         requestDispatcher.forward(request, response);
     }
 
